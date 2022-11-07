@@ -47,3 +47,6 @@ main {
   border-radius: 10px 0px 0px 10px;
   box-shadow: -7px 7px 39px 0px rgba(0, 0, 0, 0.62);
 }
+.slider-container {
+  text-align: center;
+}
