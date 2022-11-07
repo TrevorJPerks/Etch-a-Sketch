@@ -15,3 +15,10 @@
 body {
   background-color: hsl(233deg 12% 13%);
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
