@@ -11,3 +11,7 @@
   -ms-user-select: none;
   touch-action: manipulation;
 }
+
+body {
+  background-color: hsl(233deg 12% 13%);
+}
