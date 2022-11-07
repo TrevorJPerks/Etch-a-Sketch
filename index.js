@@ -21,3 +21,11 @@ function createGrid(sliderValue) {
   }
   drawingArea.appendChild(fragment);
 }
+
+function clearCanvas() {
+  const block = document.querySelectorAll('.pixel');
+
+  block.forEach(function (pixel) {
+    pixel.style.backgroundColor = 'white';
+  });
+}
