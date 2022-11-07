@@ -23,16 +23,18 @@ main {
   max-width: -webkit-fill-available;
 }
 
-.etch-a-sketch {
+#etch-a-sketch {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  width: 600px;
   height: 600px;
-  width: 900px;
   border-radius: 5px;
-  background-color: rgb(211, 211, 211);
-  border: 64px solid hsl(0, 100%, 50%);
-  box-shadow: -7px 7px 39px 0px rgba(0, 0, 0, 0.62),
-    0px 0px 5px 1px rgba(0, 0, 0, 0.31) inset;
+  background-color: rgb(255, 255, 255);
+}
+
+.pixel {
+  border: 1px solid greenyellow;
 }
 
 .control-panel {
