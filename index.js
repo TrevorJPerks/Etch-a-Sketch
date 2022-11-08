@@ -63,32 +63,16 @@ function changeColor(item) {
     '#24408E',
     '#732982',
   ];
-
   switch (userColorSelection) {
     case 'black':
-      if (item.classList.contains('isFilled')) {
-        return;
-      } else {
-        item.style.backgroundColor = 'black';
-        item.classList.add('isFilled');
-        break;
-      }
+      item.style.backgroundColor = 'black';
+      break;
     case 'rainbow':
-      if (item.classList.contains('isFilled')) {
-        return;
-      } else {
-        item.style.backgroundColor =
-          rainbow[Math.floor(Math.random() * rainbow.length)];
-        item.classList.add('isFilled');
-        break;
-      }
+      item.style.backgroundColor =
+        rainbow[Math.floor(Math.random() * rainbow.length)];
+      break;
     case 'white':
-      if (item.classList.contains('isFilled')) {
-        item.classList.remove('isFilled');
-        item.style.backgroundColor = 'white';
-      } else {
-        item.style.backgroundColor = 'white';
-      }
+      item.style.backgroundColor = 'white';
   }
 }
 
