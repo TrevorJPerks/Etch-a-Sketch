@@ -89,8 +89,8 @@ h1 {
   appearance: none;
   width: 1.5rem;
   height: 1.5rem;
-  border: 3px solid var(--radio-color, currentColor);
-  border-radius: 50%;
+  outline: 3px solid var(--radio-color, currentColor);
+  outline-offset: 3px;
 }
 
 .color-picker input[type='radio']#black {
@@ -109,5 +109,5 @@ h1 {
   background-color: var(--radio-color);
 }
 .color-picker input[type='radio']#rainbow:checked {
-  background: radial-gradient(#e40303, #ff8c00, #ffed00, #008026, #24408e);
+  background: linear-gradient(#e40303, #ff8c00, #ffed00, #008026, #24408e);
 }
