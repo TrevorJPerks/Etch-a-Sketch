@@ -28,18 +28,17 @@ radio.forEach(function (radioButton) {
 
 function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
-
   sliderValue = slider.value;
+
   // Remove all nodes before adding more.
   while (drawingArea.firstChild) {
     drawingArea.removeChild(drawingArea.firstChild);
   }
-
-  const fragment = document.createDocumentFragment();
   // Quick maths
   const numberOfDivs = sliderValue ** 2;
   const divSize = 600 / sliderValue;
 
+  const fragment = document.createDocumentFragment();
   for (i = 0; i < numberOfDivs; i++) {
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
@@ -56,21 +55,16 @@ function createGrid(sliderValue) {
 
 // Update Div with user selected Color
 function changeColor(triggeredDiv) {
-  const rainbow = [
-    '#E40303',
-    '#FF8C00',
-    '#FFED00',
-    '#008026',
-    '#24408E',
-    '#732982',
-  ];
+  const rgb1 = Math.floor(Math.random() * 256);
+  const rgb2 = Math.floor(Math.random() * 256);
+  const rgb3 = Math.floor(Math.random() * 256);
+
   switch (userColorSelection) {
     case 'black':
       triggeredDiv.style.backgroundColor = 'black';
       break;
     case 'rainbow':
-      triggeredDiv.style.backgroundColor =
-        rainbow[Math.floor(Math.random() * rainbow.length)];
+      triggeredDiv.style.backgroundColor = `rgb(${rgb1},${rgb2},${rgb3})`;
       break;
     case 'white':
       triggeredDiv.style.backgroundColor = 'white';
