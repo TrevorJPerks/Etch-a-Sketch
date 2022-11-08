@@ -13,15 +13,24 @@
 }
 
 main {
-  background-color: hsl(233deg 12% 13%);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 900vw;
-  height: 100vh;
+  width: 90vw;
+  height: 80vh;
   max-height: -webkit-fill-available;
   max-width: -webkit-fill-available;
   color: white;
+}
+
+body {
+  text-align: center;
+  color: white;
+  background: hsl(233deg 12% 13%);
+}
+
+h1 {
+  font-size: 64px;
 }
 
 #etch-a-sketch {
@@ -32,6 +41,7 @@ main {
   height: 600px;
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
+  overflow: hidden;
 }
 
 .control-panel {
