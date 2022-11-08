@@ -17,7 +17,7 @@ radio.forEach(function (radioButton) {
     if (radioButton.classList.contains('black')) {
       userColorSelection = 'black';
     }
-    if (radioButton.classList.contains('white')) {
+    if (radioButton.classList.contains('eraser')) {
       userColorSelection = 'white';
     }
     if (radioButton.classList.contains('rainbow')) {
