@@ -2,6 +2,24 @@ const slider = document.querySelector('.slider');
 const sliderstep = (document.querySelector('.slider').step = '16');
 const output = document.querySelector('.slider-value');
 
+let userColorSelection = 'black';
+// color picker
+const radio = document.querySelectorAll('.radio');
+
+radio.forEach(function (radioButton) {
+  radioButton.addEventListener('click', function () {
+    if (radioButton.classList.contains('black')) {
+      userColorSelection = 'black';
+    }
+    if (radioButton.classList.contains('white')) {
+      userColorSelection = 'white';
+    }
+    if (radioButton.classList.contains('rainbow')) {
+      userColorSelection = 'rainbow';
+    }
+  });
+});
+
 function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
   sliderValue = slider.value;
@@ -27,8 +45,6 @@ function createGrid(sliderValue) {
   }
   drawingArea.appendChild(fragment);
 }
-
-let userColorSelection = 'black';
 
 function changeColor(item) {
   const rainbow = [
