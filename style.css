@@ -21,6 +21,7 @@ main {
   height: 100vh;
   max-height: -webkit-fill-available;
   max-width: -webkit-fill-available;
+  color: white;
 }
 
 #etch-a-sketch {
@@ -33,9 +34,9 @@ main {
   background-color: rgb(255, 255, 255);
 }
 
-.pixel {
+/* .pixel {
   border: 1px solid greenyellow;
-}
+} */
 
 .control-panel {
   display: flex;
