@@ -30,7 +30,7 @@ function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
 
   sliderValue = slider.value;
-  // Remove all nodes before adding more. (Should probably have condition)
+  // Remove all nodes before adding more.
   while (drawingArea.firstChild) {
     drawingArea.removeChild(drawingArea.firstChild);
   }
@@ -54,7 +54,8 @@ function createGrid(sliderValue) {
   drawingArea.appendChild(fragment);
 }
 
-function changeColor(item) {
+// Update Div with user selected Color
+function changeColor(triggeredDiv) {
   const rainbow = [
     '#E40303',
     '#FF8C00',
@@ -65,14 +66,14 @@ function changeColor(item) {
   ];
   switch (userColorSelection) {
     case 'black':
-      item.style.backgroundColor = 'black';
+      triggeredDiv.style.backgroundColor = 'black';
       break;
     case 'rainbow':
-      item.style.backgroundColor =
+      triggeredDiv.style.backgroundColor =
         rainbow[Math.floor(Math.random() * rainbow.length)];
       break;
     case 'white':
-      item.style.backgroundColor = 'white';
+      triggeredDiv.style.backgroundColor = 'white';
   }
 }
 
