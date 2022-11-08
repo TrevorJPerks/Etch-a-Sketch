@@ -97,8 +97,8 @@ h1 {
   --radio-color: black;
 }
 
-.color-picker input[type='radio']#white {
-  --radio-color: white;
+.color-picker input[type='radio']#eraser {
+  --radio-color: rgb(255, 197, 197);
 }
 
 .color-picker input[type='radio']#rainbow {
