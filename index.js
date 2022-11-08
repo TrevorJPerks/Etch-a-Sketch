@@ -1,7 +1,6 @@
 const slider = document.querySelector('.slider');
 const sliderstep = (document.querySelector('.slider').step = '16');
 const output = document.querySelector('.slider-value');
-const eraseButton = document.querySelector('.erase-button');
 
 function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
@@ -59,6 +58,7 @@ function paintEmptySquares(userColorSelection) {
   });
 }
 
+const eraseButton = document.querySelector('.erase-button');
 // Erase all
 eraseButton.addEventListener('click', function () {
   const squares = document.querySelectorAll('.pixel');
