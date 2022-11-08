@@ -89,8 +89,7 @@ h1 {
   appearance: none;
   width: 1.5rem;
   height: 1.5rem;
-  outline: 3px solid var(--radio-color, currentColor);
-  outline-offset: 3px;
+  border: 3px solid var(--radio-color, currentColor);
   border-radius: 50%;
 }
 
