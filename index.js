@@ -20,18 +20,17 @@ function createGrid(sliderValue) {
     pixel.className = 'pixel';
     pixel.style.height = `${divSize}px`;
     pixel.style.width = `${divSize}px`;
-
+    pixel.addEventListener('mouseover', function () {
+      changeColor(this);
+    });
     fragment.appendChild(pixel);
   }
   drawingArea.appendChild(fragment);
 }
 
-// Color of paintEmptySquares
 let userColorSelection = 'black';
 
-function paintEmptySquares(userColorSelection) {
-  const squares = document.querySelectorAll('.pixel');
-
+function changeColor(item) {
   const rainbow = [
     '#E40303',
     '#FF8C00',
@@ -41,21 +40,32 @@ function paintEmptySquares(userColorSelection) {
     '#732982',
   ];
 
-  squares.forEach(function (div) {
-    div.addEventListener('mouseover', function () {
-      if (div.classList.contains('isFilled')) {
+  switch (userColorSelection) {
+    case 'black':
+      if (item.classList.contains('isFilled')) {
         return;
-      }
-      if (userColorSelection === 'rainbow') {
-        div.style.backgroundColor =
-          rainbow[Math.floor(Math.random() * rainbow.length)];
-        div.classList.add('isFilled');
       } else {
-        div.style.backgroundColor = `${userColorSelection}`;
-        div.classList.add('isFilled');
+        item.style.backgroundColor = 'black';
+        item.classList.add('isFilled');
+        break;
       }
-    });
-  });
+    case 'rainbow':
+      if (item.classList.contains('isFilled')) {
+        return;
+      } else {
+        item.style.backgroundColor =
+          rainbow[Math.floor(Math.random() * rainbow.length)];
+        item.classList.add('isFilled');
+        break;
+      }
+    case 'white':
+      if (item.classList.contains('isFilled')) {
+        item.classList.remove('isFilled');
+        item.style.backgroundColor = 'white';
+      } else {
+        item.style.backgroundColor = 'white';
+      }
+  }
 }
 
 const eraseButton = document.querySelector('.erase-button');
@@ -74,11 +84,9 @@ eraseButton.addEventListener('click', function () {
 slider.oninput = () => {
   output.innerHTML = `${slider.value} x ${slider.value} `;
   createGrid(slider.value);
-  paintEmptySquares(userColorSelection);
 };
 
 window.onload = () => {
   output.innerHTML = `${slider.value} x ${slider.value} `;
   createGrid(slider.value);
-  paintEmptySquares(userColorSelection);
 };
