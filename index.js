@@ -3,7 +3,7 @@ const sliderstep = (document.querySelector('.slider').step = '16');
 const output = document.querySelector('.slider-value');
 
 slider.oninput = () => {
-  output.innerHTML = slider.value;
+  output.innerHTML = `${slider.value} x ${slider.value} `;
   createGrid(slider.value);
 };
 
@@ -38,3 +38,8 @@ function clearCanvas() {
     pixel.style.backgroundColor = 'white';
   });
 }
+
+window.onload = () => {
+  output.innerHTML = `${slider.value} x ${slider.value} `;
+  createGrid(slider.value);
+};
