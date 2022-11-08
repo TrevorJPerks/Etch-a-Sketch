@@ -1,6 +1,13 @@
-let sliderValue = 16;
 const slider = document.querySelector('.slider');
-const value = document.querySelector('.slider-value');
+const sliderstep = (document.querySelector('.slider').step = '16');
+const output = document.querySelector('.slider-value');
+
+slider.oninput = () => {
+  output.innerHTML = slider.value;
+  createGrid(slider.value);
+};
+
+const sliderValue = slider.value;
 
 function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
