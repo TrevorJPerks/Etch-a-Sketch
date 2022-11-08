@@ -34,10 +34,6 @@ main {
   background-color: rgb(255, 255, 255);
 }
 
-/* .pixel {
-  border: 1px solid greenyellow;
-} */
-
 .control-panel {
   display: flex;
   flex-direction: column;
@@ -52,4 +48,20 @@ main {
 }
 .slider-container {
   text-align: center;
+}
+
+.erase-button {
+  border: white;
+  border-radius: 50px;
+  background-color: hsl(0, 100%, 50%);
+  color: white;
+  padding: 10px 16px;
+}
+
+.erase-button:hover {
+  background-color: hsl(0, 100%, 45%);
+  scale: 0.99;
+  box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
 }
