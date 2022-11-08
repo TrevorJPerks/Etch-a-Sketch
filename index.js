@@ -2,7 +2,13 @@ const slider = document.querySelector('.slider');
 const sliderstep = (document.querySelector('.slider').step = '16');
 const output = document.querySelector('.slider-value');
 
+slider.oninput = () => {
+  output.innerHTML = `${slider.value} x ${slider.value} `;
+  createGrid(slider.value);
+};
+
 let userColorSelection = 'black';
+
 // color picker
 const radio = document.querySelectorAll('.radio');
 
@@ -22,6 +28,7 @@ radio.forEach(function (radioButton) {
 
 function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
+
   sliderValue = slider.value;
   // Remove all nodes before adding more. (Should probably have condition)
   while (drawingArea.firstChild) {
@@ -38,6 +45,7 @@ function createGrid(sliderValue) {
     pixel.className = 'pixel';
     pixel.style.height = `${divSize}px`;
     pixel.style.width = `${divSize}px`;
+
     pixel.addEventListener('mouseover', function () {
       changeColor(this);
     });
@@ -97,11 +105,7 @@ eraseButton.addEventListener('click', function () {
   });
 });
 
-slider.oninput = () => {
-  output.innerHTML = `${slider.value} x ${slider.value} `;
-  createGrid(slider.value);
-};
-
+// Initial Setup
 window.onload = () => {
   output.innerHTML = `${slider.value} x ${slider.value} `;
   createGrid(slider.value);
