@@ -82,10 +82,7 @@ eraseButton.addEventListener('click', function () {
   const squares = document.querySelectorAll('.pixel');
 
   squares.forEach(function (div) {
-    if (div.classList.contains('isFilled')) {
-      div.style.backgroundColor = 'white';
-      div.classList.remove('isFilled');
-    }
+    div.style.backgroundColor = 'white';
   });
 });
 
