@@ -22,6 +22,27 @@
           <p class="slider-value"></p>
           <input type="range" min="16" max="96" value="16" class="slider" />
         </div>
+        <form class="color-picker">
+          <fieldset>
+            <legend>Pick a Color:</legend>
+            <br />
+            <label for="color">Black</label>
+            <input
+              type="radio"
+              id="black"
+              checked
+              name="color"
+              class="radio black"
+            />
+            <label for="color">Rainbow</label>
+            <input
+              type="radio"
+              id="rainbow"
+              name="color"
+              class="radio rainbow"
+            />
+          </fieldset>
+        </form>
         <button type="button" class="erase-button">Erase All</button>
       </div>
       <div id="etch-a-sketch"></div>
