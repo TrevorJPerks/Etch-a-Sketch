@@ -23,6 +23,7 @@
     <main>
       <div class="control-panel">
         <div class="slider-container">
+          <label>Size:</label>
           <p class="slider-value"></p>
           <input
             type="range"
@@ -35,24 +36,21 @@
         </div>
         <form class="color-picker">
           <fieldset>
-            <legend>Pick a Color:</legend>
-            <br />
-            <label for="color">Black</label>
+            <label for="color">Color:</label>
             <input
-              type="radio"
-              id="black"
-              checked
+              type="color"
+              id="custom-color"
               name="color"
-              class="radio black"
+              class="color custom"
             />
-            <label for="color">Rainbow</label>
+            <label for="color">Rainbow:</label>
             <input
               type="radio"
               id="rainbow"
               name="color"
               class="radio rainbow"
             />
-            <label for="color">Eraser</label>
+            <label for="color">Eraser:</label>
             <input type="radio" id="eraser" name="color" class="radio eraser" />
           </fieldset>
         </form>
