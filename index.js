@@ -1,11 +1,11 @@
 const slider = document.querySelector('.slider');
-const output = document.querySelector('.slider-value');
+const sliderText = document.querySelector('.slider-value');
 
 slider.onchange = () => {
-  createGrid(slider.value);
+  createGrid();
 };
 slider.oninput = () => {
-  output.innerHTML = `${slider.value} x ${slider.value} `;
+  sliderText.innerHTML = `${slider.value} x ${slider.value} `;
 };
 
 let userColorSelection = 'black';
@@ -27,7 +27,7 @@ radio.forEach(function (radioButton) {
   });
 });
 
-function createGrid(sliderValue) {
+function createGrid() {
   const drawingArea = document.getElementById('etch-a-sketch');
   sliderValue = slider.value;
 
@@ -84,6 +84,6 @@ eraseButton.addEventListener('click', function () {
 
 // Initial Setup
 window.onload = () => {
-  output.innerHTML = `${slider.value} x ${slider.value} `;
-  createGrid(slider.value);
+  sliderText.innerHTML = `${slider.value} x ${slider.value} `;
+  createGrid();
 };
