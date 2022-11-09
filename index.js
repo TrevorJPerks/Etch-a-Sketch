@@ -1,5 +1,4 @@
 const slider = document.querySelector('.slider');
-const sliderstep = (document.querySelector('.slider').step = '16');
 const output = document.querySelector('.slider-value');
 
 slider.oninput = () => {
