@@ -1,34 +1,18 @@
 const slider = document.querySelector('.slider');
 const sliderText = document.querySelector('.slider-value');
 
+let isGridShown = false;
+
 slider.onchange = () => {
   createGrid();
+  isGridShown = false;
+  gridButton.textContent = 'Show Grid';
 };
 slider.oninput = () => {
   sliderText.innerHTML = `${slider.value} x ${slider.value} `;
 };
 
-let userColorSelection = 'black';
-
-// color picker
-const radio = document.querySelectorAll('.radio');
-
-radio.forEach(function (radioButton) {
-  radioButton.addEventListener('click', function () {
-    if (radioButton.classList.contains('black')) {
-      userColorSelection = 'black';
-    }
-    if (radioButton.classList.contains('eraser')) {
-      userColorSelection = 'white';
-    }
-    if (radioButton.classList.contains('rainbow')) {
-      userColorSelection = 'rainbow';
-    }
-  });
-});
-
-function createGrid() {
-  isGridShown = false;
+function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
   sliderValue = slider.value;
 
@@ -47,7 +31,7 @@ function createGrid() {
     pixel.style.height = `${divSize}px`;
     pixel.style.width = `${divSize}px`;
 
-    pixel.addEventListener('mouseover', function () {
+    pixel.addEventListener('click', function () {
       changeColor(this);
     });
     fragment.appendChild(pixel);
@@ -55,7 +39,33 @@ function createGrid() {
   drawingArea.appendChild(fragment);
 }
 
-// Update Div with user selected Color
+// Color Selection
+let userColorSelection = 'black';
+const inputColor = document.querySelector('.custom');
+const radio = document.querySelectorAll('.radio');
+
+inputColor.oninput = (e) => {
+  userColorSelection = e.target.value;
+};
+
+inputColor.onclick = (e) => {
+  radio.forEach((button) => {
+    button.checked = false;
+    userColorSelection = e.target.value;
+  });
+};
+
+radio.forEach(function (radioButton) {
+  radioButton.addEventListener('click', function () {
+    if (radioButton.classList.contains('eraser')) {
+      userColorSelection = 'white';
+    }
+    if (radioButton.classList.contains('rainbow')) {
+      userColorSelection = 'rainbow';
+    }
+  });
+});
+
 function changeColor(triggeredDiv) {
   const rainbowColor = [
     '#e40303',
@@ -71,16 +81,15 @@ function changeColor(triggeredDiv) {
   const rgb3 = Math.floor(Math.random() * 256);
 
   switch (userColorSelection) {
-    case 'black':
-      triggeredDiv.style.backgroundColor = 'black';
-      break;
     case 'rainbow':
       triggeredDiv.style.backgroundColor =
         rainbowColor[Math.floor(Math.random() * rainbowColor.length)];
       break;
     case 'white':
       triggeredDiv.style.backgroundColor = 'white';
+      break;
   }
+  triggeredDiv.style.backgroundColor = userColorSelection;
 }
 
 const eraseButton = document.querySelector('.erase-button');
@@ -93,7 +102,6 @@ eraseButton.onclick = () => {
 };
 
 const gridButton = document.querySelector('.grid-button');
-let isGridShown = false;
 
 gridButton.onclick = () => {
   const squares = document.querySelectorAll('.pixel');
@@ -102,13 +110,16 @@ gridButton.onclick = () => {
       div.classList.remove('show-grid');
     });
     isGridShown = false;
+    gridButton.textContent = 'Show Grid';
   } else {
     squares.forEach(function (div) {
       div.classList.add('show-grid');
     });
     isGridShown = true;
+    gridButton.textContent = 'Hide Grid';
   }
 };
+
 // Initial Setup
 window.onload = () => {
   sliderText.innerHTML = `${slider.value} x ${slider.value} `;
