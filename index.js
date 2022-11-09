@@ -28,6 +28,7 @@ radio.forEach(function (radioButton) {
 });
 
 function createGrid() {
+  isGridShown = false;
   const drawingArea = document.getElementById('etch-a-sketch');
   sliderValue = slider.value;
 
@@ -56,6 +57,15 @@ function createGrid() {
 
 // Update Div with user selected Color
 function changeColor(triggeredDiv) {
+  const rainbowColor = [
+    '#e40303',
+    '#ff8c00',
+    '#ffed00',
+    '#008026',
+    '#24408e',
+    '#732982',
+  ];
+
   const rgb1 = Math.floor(Math.random() * 256);
   const rgb2 = Math.floor(Math.random() * 256);
   const rgb3 = Math.floor(Math.random() * 256);
@@ -65,7 +75,8 @@ function changeColor(triggeredDiv) {
       triggeredDiv.style.backgroundColor = 'black';
       break;
     case 'rainbow':
-      triggeredDiv.style.backgroundColor = `rgb(${rgb1},${rgb2},${rgb3})`;
+      triggeredDiv.style.backgroundColor =
+        rainbowColor[Math.floor(Math.random() * rainbowColor.length)];
       break;
     case 'white':
       triggeredDiv.style.backgroundColor = 'white';
@@ -73,15 +84,31 @@ function changeColor(triggeredDiv) {
 }
 
 const eraseButton = document.querySelector('.erase-button');
-// Erase all
-eraseButton.addEventListener('click', function () {
-  const squares = document.querySelectorAll('.pixel');
 
+eraseButton.onclick = () => {
+  const squares = document.querySelectorAll('.pixel');
   squares.forEach(function (div) {
     div.style.backgroundColor = 'white';
   });
-});
+};
 
+const gridButton = document.querySelector('.grid-button');
+let isGridShown = false;
+
+gridButton.onclick = () => {
+  const squares = document.querySelectorAll('.pixel');
+  if (isGridShown) {
+    squares.forEach(function (div) {
+      div.classList.remove('show-grid');
+    });
+    isGridShown = false;
+  } else {
+    squares.forEach(function (div) {
+      div.classList.add('show-grid');
+    });
+    isGridShown = true;
+  }
+};
 // Initial Setup
 window.onload = () => {
   sliderText.innerHTML = `${slider.value} x ${slider.value} `;
