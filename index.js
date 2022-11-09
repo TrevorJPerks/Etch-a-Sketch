@@ -1,7 +1,7 @@
+let isGridShown = false;
+
 const slider = document.querySelector('.slider');
 const sliderText = document.querySelector('.slider-value');
-
-let isGridShown = false;
 
 slider.onchange = () => {
   createGrid();
@@ -76,10 +76,6 @@ function changeColor(triggeredDiv) {
     '#24408e',
     '#732982',
   ];
-
-  const rgb1 = Math.floor(Math.random() * 256);
-  const rgb2 = Math.floor(Math.random() * 256);
-  const rgb3 = Math.floor(Math.random() * 256);
 
   switch (userColorSelection) {
     case 'rainbow':
