@@ -8,6 +8,7 @@ slider.onchange = () => {
   isGridShown = false;
   gridButton.textContent = 'Show Grid';
 };
+
 slider.oninput = () => {
   sliderText.innerHTML = `${slider.value} x ${slider.value} `;
 };
@@ -31,7 +32,7 @@ function createGrid(sliderValue) {
     pixel.style.height = `${divSize}px`;
     pixel.style.width = `${divSize}px`;
 
-    pixel.addEventListener('click', function () {
+    pixel.addEventListener('mouseover', function () {
       changeColor(this);
     });
     fragment.appendChild(pixel);
