@@ -62,21 +62,34 @@ h1 {
   text-align: center;
 }
 
-.erase-button {
+button {
   border: white;
   border-radius: 50px;
-  background-color: hsl(0, 100%, 50%);
   color: white;
   padding: 8px 20px;
   font-size: 16px;
 }
 
-.erase-button:hover {
-  background-color: hsl(0, 100%, 45%);
+button:hover {
   scale: 0.99;
   box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
   -webkit-box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
   -moz-box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
+}
+.grid-button {
+  background-color: hsl(271, 100%, 50%);
+}
+
+.grid-button:hover {
+  background-color: hsl(271, 100%, 42%);
+}
+
+.erase-button {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.erase-button:hover {
+  background-color: hsl(0, 100%, 45%);
 }
 
 .color-picker > fieldset {
@@ -111,6 +124,7 @@ h1 {
 .color-picker input[type='radio']:checked {
   background-color: var(--radio-color);
 }
+
 .color-picker input[type='radio']#rainbow:checked {
   background: linear-gradient(
     #e40303,
@@ -120,4 +134,8 @@ h1 {
     #24408e,
     #732982
   );
+}
+
+.show-grid {
+  border: 1px solid rgba(128, 128, 128, 50%);
 }
