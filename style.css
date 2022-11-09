@@ -3,33 +3,27 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Secular One', sans-serif;
-  /* No dragging, highlighting, or tap zooming */
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  touch-action: manipulation;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background: hsl(233deg 12% 13%);
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90vw;
-  height: 80vh;
-  max-height: -webkit-fill-available;
-  max-width: -webkit-fill-available;
-  color: white;
-}
-
-body {
-  text-align: center;
-  color: white;
-  background: hsl(233deg 12% 13%);
 }
 
 h1 {
+  margin-left: 150px;
   font-size: 64px;
 }
 
