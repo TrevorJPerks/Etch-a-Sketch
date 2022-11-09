@@ -2,8 +2,10 @@ const slider = document.querySelector('.slider');
 const output = document.querySelector('.slider-value');
 
 slider.onchange = () => {
-  output.innerHTML = `${slider.value} x ${slider.value} `;
   createGrid(slider.value);
+};
+slider.oninput = () => {
+  output.innerHTML = `${slider.value} x ${slider.value} `;
 };
 
 let userColorSelection = 'black';
