@@ -67,7 +67,8 @@ h1 {
   border-radius: 50px;
   background-color: hsl(0, 100%, 50%);
   color: white;
-  padding: 10px 16px;
+  padding: 8px 20px;
+  font-size: 16px;
 }
 
 .erase-button:hover {
@@ -111,5 +112,12 @@ h1 {
   background-color: var(--radio-color);
 }
 .color-picker input[type='radio']#rainbow:checked {
-  background: linear-gradient(#e40303, #ff8c00, #ffed00, #008026, #24408e);
+  background: linear-gradient(
+    #e40303,
+    #ff8c00,
+    #ffed00,
+    #008026,
+    #24408e,
+    #732982
+  );
 }
