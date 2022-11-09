@@ -1,7 +1,7 @@
 const slider = document.querySelector('.slider');
 const output = document.querySelector('.slider-value');
 
-slider.oninput = () => {
+slider.onchange = () => {
   output.innerHTML = `${slider.value} x ${slider.value} `;
   createGrid(slider.value);
 };
