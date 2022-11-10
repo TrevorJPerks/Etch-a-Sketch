@@ -6,6 +6,7 @@ const gridButton = document.querySelector('.grid-button');
 const rangeSlider = document.querySelector('.slider');
 const rangeSliderText = document.querySelector('.slider-value');
 
+// Range Slider Functionality
 rangeSlider.onchange = () => {
   createGrid(rangeSlider.value);
   isGridShown = false;
@@ -16,17 +17,18 @@ rangeSlider.oninput = () => {
   rangeSliderText.innerHTML = `${rangeSlider.value} x ${rangeSlider.value}`;
 };
 
+// Grid Creation
 function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
   const fragment = document.createDocumentFragment();
   // Quick maths
   const numberOfDivs = sliderValue ** 2;
   const divSize = 600 / sliderValue;
-
   // Remove all nodes before adding more.
   while (drawingArea.firstChild) {
     drawingArea.removeChild(drawingArea.firstChild);
   }
+
   for (i = 0; i < numberOfDivs; i++) {
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
@@ -56,6 +58,7 @@ document.querySelectorAll('.radio').forEach((radioButton) => {
   });
 });
 
+// Draw Function
 function changeColor() {
   if (userColorSelection === 'rainbow') {
     this.style.backgroundColor = `hsl(${Math.floor(
@@ -66,7 +69,7 @@ function changeColor() {
   }
 }
 
-// SHOW / HIDE GRID LINES
+// Show / Hide Grid Lines
 gridButton.addEventListener('click', toggleGrid);
 
 function toggleGrid() {
@@ -88,7 +91,7 @@ function toggleGrid() {
   }
 }
 
-// CLEAR DRAWING AREA
+// Clear Drawing Area
 document.querySelector('.clearAll-button').addEventListener('click', clearAll);
 
 function clearAll() {
