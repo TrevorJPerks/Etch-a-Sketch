@@ -69,7 +69,7 @@ function changeColor() {
 }
 
 // SHOW / HIDE GRID LINES
-document.querySelector('.grid-button').addEventListener('click', toggleGrid);
+gridButton.addEventListener('click', toggleGrid);
 
 function toggleGrid() {
   const squares = document.querySelectorAll('.pixel');
