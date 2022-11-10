@@ -1,33 +1,34 @@
 let isGridShown = false;
+let userColorSelection = 'black';
 
+// Input Elements
 const gridButton = document.querySelector('.grid-button');
+const rangeSlider = document.querySelector('.slider');
+const rangeSliderText = document.querySelector('.slider-value');
 
-const slider = document.querySelector('.slider');
-const sliderText = document.querySelector('.slider-value');
-
-slider.onchange = () => {
+rangeSlider.onchange = () => {
   createGrid();
   isGridShown = false;
   gridButton.textContent = 'Show Grid';
 };
 
-slider.oninput = () => {
-  sliderText.innerHTML = `${slider.value} x ${slider.value} `;
+rangeSlider.oninput = () => {
+  rangeSliderText.innerHTML = `${rangeSlider.value} x ${rangeSlider.value} `;
 };
 
-function createGrid(sliderValue) {
+function createGrid() {
   const drawingArea = document.getElementById('etch-a-sketch');
-  sliderValue = slider.value;
 
   // Remove all nodes before adding more.
   while (drawingArea.firstChild) {
     drawingArea.removeChild(drawingArea.firstChild);
   }
   // Quick maths
-  const numberOfDivs = sliderValue ** 2;
-  const divSize = 600 / sliderValue;
+  const numberOfDivs = rangeSlider.value ** 2;
+  const divSize = 600 / rangeSlider.value;
 
   const fragment = document.createDocumentFragment();
+
   for (i = 0; i < numberOfDivs; i++) {
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
@@ -40,8 +41,6 @@ function createGrid(sliderValue) {
   }
   drawingArea.appendChild(fragment);
 }
-
-let userColorSelection = 'black';
 
 // Radio Button Functionality
 document.querySelectorAll('.radio').forEach((radioButton) => {
@@ -102,6 +101,6 @@ function clearAll() {
 
 // Initial Setup
 window.onload = () => {
-  sliderText.innerHTML = `${slider.value} x ${slider.value} `;
+  rangeSliderText.innerHTML = `${rangeSlider.value} x ${rangeSlider.value} `;
   createGrid();
 };
