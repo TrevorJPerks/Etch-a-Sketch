@@ -1,8 +1,7 @@
 # Etch-a-Sketch
 
-Live Demo: https://trevorjperks.github.io/Etch-a-Sketch/
-
 ![Preview Image](https://i.imgur.com/NeWaSOo.png)
+Live Demo: https://trevorjperks.github.io/Etch-a-Sketch/
 
 An interactable Etch-a-Sketch created using HTML, CSS, and Vanilla Javascript.
 
