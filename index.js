@@ -39,26 +39,16 @@ function createGrid(sliderValue) {
   drawingArea.appendChild(fragment);
 }
 
-// Color Selection
 let userColorSelection = 'black';
-const inputColor = document.querySelector('.custom');
-const radio = document.querySelectorAll('.radio');
 
-inputColor.oninput = (e) => {
-  userColorSelection = e.target.value;
-};
-
-inputColor.onclick = (e) => {
-  radio.forEach((button) => {
-    button.checked = false;
-    userColorSelection = e.target.value;
-  });
-};
-
-radio.forEach((radioButton) => {
+// Radio Button Functionality
+document.querySelectorAll('.radio').forEach((radioButton) => {
   radioButton.addEventListener('click', () => {
+    if (radioButton.classList.contains('black')) {
+      userColorSelection = 'hsl(0, 0%, 0%)';
+    }
     if (radioButton.classList.contains('eraser')) {
-      userColorSelection = 'white';
+      userColorSelection = 'hsl(0, 0%, 100%)';
     }
     if (radioButton.classList.contains('rainbow')) {
       userColorSelection = 'rainbow';
@@ -67,17 +57,13 @@ radio.forEach((radioButton) => {
 });
 
 function changeColor() {
-  switch (userColorSelection) {
-    case 'rainbow':
-      this.style.backgroundColor = `hsl(${Math.floor(
-        Math.random() * 360
-      )}, 100%, 50%)`;
-      break;
-    case 'white':
-      this.style.backgroundColor = 'white';
-      break;
+  if (userColorSelection === 'rainbow') {
+    this.style.backgroundColor = `hsl(${Math.floor(
+      Math.random() * 360
+    )}, 100%, 50%)`;
+  } else {
+    this.style.backgroundColor = `${userColorSelection}`;
   }
-  triggeredDiv.style.backgroundColor = userColorSelection;
 }
 
 // SHOW / HIDE GRID LINES
