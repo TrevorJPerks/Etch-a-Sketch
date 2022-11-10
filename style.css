@@ -78,11 +78,11 @@ button:hover {
   background-color: hsl(271, 100%, 42%);
 }
 
-.erase-button {
+.clearAll-button {
   background-color: hsl(0, 100%, 50%);
 }
 
-.erase-button:hover {
+.clearAll-button:hover {
   background-color: hsl(0, 100%, 45%);
 }
 
