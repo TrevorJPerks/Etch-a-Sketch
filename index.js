@@ -32,9 +32,8 @@ function createGrid(sliderValue) {
     pixel.style.height = `${divSize}px`;
     pixel.style.width = `${divSize}px`;
 
-    pixel.addEventListener('mouseover', function () {
-      changeColor(this);
-    });
+    pixel.addEventListener('mouseover', changeColor);
+
     fragment.appendChild(pixel);
   }
   drawingArea.appendChild(fragment);
@@ -56,8 +55,8 @@ inputColor.onclick = (e) => {
   });
 };
 
-radio.forEach(function (radioButton) {
-  radioButton.addEventListener('click', function () {
+radio.forEach((radioButton) => {
+  radioButton.addEventListener('click', () => {
     if (radioButton.classList.contains('eraser')) {
       userColorSelection = 'white';
     }
@@ -67,15 +66,15 @@ radio.forEach(function (radioButton) {
   });
 });
 
-function changeColor(triggeredDiv) {
+function changeColor() {
   switch (userColorSelection) {
     case 'rainbow':
-      triggeredDiv.style.backgroundColor = `hsl(${Math.floor(
+      this.style.backgroundColor = `hsl(${Math.floor(
         Math.random() * 360
       )}, 100%, 50%)`;
       break;
     case 'white':
-      triggeredDiv.style.backgroundColor = 'white';
+      this.style.backgroundColor = 'white';
       break;
   }
   triggeredDiv.style.backgroundColor = userColorSelection;
