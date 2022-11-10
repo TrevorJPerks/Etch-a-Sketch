@@ -68,19 +68,11 @@ radio.forEach(function (radioButton) {
 });
 
 function changeColor(triggeredDiv) {
-  const rainbowColor = [
-    '#e40303',
-    '#ff8c00',
-    '#ffed00',
-    '#008026',
-    '#24408e',
-    '#732982',
-  ];
-
   switch (userColorSelection) {
     case 'rainbow':
-      triggeredDiv.style.backgroundColor =
-        rainbowColor[Math.floor(Math.random() * rainbowColor.length)];
+      triggeredDiv.style.backgroundColor = `hsl(${Math.floor(
+        Math.random() * 360
+      )}, 100%, 50%)`;
       break;
     case 'white':
       triggeredDiv.style.backgroundColor = 'white';
