@@ -72,14 +72,14 @@ gridButton.addEventListener('click', toggleGrid);
 function toggleGrid() {
   const squares = document.querySelectorAll('.pixel');
   if (isGridShown) {
-    squares.forEach(function (div) {
+    squares.forEach((div) => {
       div.classList.remove('show-grid');
     });
     // toggle
     isGridShown = false;
     gridButton.textContent = 'Show Grid';
   } else {
-    squares.forEach(function (div) {
+    squares.forEach((div) => {
       div.classList.add('show-grid');
     });
     // toggle
@@ -93,7 +93,7 @@ document.querySelector('.clearAll-button').addEventListener('click', clearAll);
 
 function clearAll() {
   const squares = document.querySelectorAll('.pixel');
-  squares.forEach(function (div) {
+  squares.forEach((div) => {
     div.style.backgroundColor = 'hsl(0, 0%, 100%)'; // White
   });
 }
