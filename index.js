@@ -7,38 +7,37 @@ const rangeSlider = document.querySelector('.slider');
 const rangeSliderText = document.querySelector('.slider-value');
 
 rangeSlider.onchange = () => {
-  createGrid();
+  createGrid(rangeSlider.value);
   isGridShown = false;
   gridButton.textContent = 'Show Grid';
 };
 
 rangeSlider.oninput = () => {
-  rangeSliderText.innerHTML = `${rangeSlider.value} x ${rangeSlider.value} `;
+  rangeSliderText.innerHTML = `${rangeSlider.value} x ${rangeSlider.value}`;
 };
 
-function createGrid() {
+function createGrid(sliderValue) {
   const drawingArea = document.getElementById('etch-a-sketch');
+  const fragment = document.createDocumentFragment();
+  // Quick maths
+  const numberOfDivs = sliderValue ** 2;
+  const divSize = 600 / sliderValue;
 
   // Remove all nodes before adding more.
   while (drawingArea.firstChild) {
     drawingArea.removeChild(drawingArea.firstChild);
   }
-  // Quick maths
-  const numberOfDivs = rangeSlider.value ** 2;
-  const divSize = 600 / rangeSlider.value;
-
-  const fragment = document.createDocumentFragment();
-
   for (i = 0; i < numberOfDivs; i++) {
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
     pixel.style.height = `${divSize}px`;
     pixel.style.width = `${divSize}px`;
-
+    // EventListener
     pixel.addEventListener('mouseover', changeColor);
-
+    // Append to fragment
     fragment.appendChild(pixel);
   }
+  // Append fragment to DOM
   drawingArea.appendChild(fragment);
 }
 
@@ -102,5 +101,5 @@ function clearAll() {
 // Initial Setup
 window.onload = () => {
   rangeSliderText.innerHTML = `${rangeSlider.value} x ${rangeSlider.value} `;
-  createGrid();
+  createGrid(rangeSlider.value);
 };
