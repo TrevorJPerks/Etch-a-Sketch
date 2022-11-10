@@ -1,5 +1,7 @@
 let isGridShown = false;
 
+const gridButton = document.querySelector('.grid-button');
+
 const slider = document.querySelector('.slider');
 const sliderText = document.querySelector('.slider-value');
 
@@ -71,7 +73,6 @@ document.querySelector('.grid-button').addEventListener('click', toggleGrid);
 
 function toggleGrid() {
   const squares = document.querySelectorAll('.pixel');
-  const gridButton = document.querySelector('.grid-button');
   if (isGridShown) {
     squares.forEach(function (div) {
       div.classList.remove('show-grid');
