@@ -1,5 +1,3 @@
-# Etch-a-Sketch
-
 ![Preview Image](https://i.imgur.com/sgARYLb.jpeg)
 Live Demo: https://trevorjperks.github.io/Etch-a-Sketch/
 
