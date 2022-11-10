@@ -71,16 +71,19 @@ document.querySelector('.grid-button').addEventListener('click', toggleGrid);
 
 function toggleGrid() {
   const squares = document.querySelectorAll('.pixel');
+  const gridButton = document.querySelector('.grid-button');
   if (isGridShown) {
     squares.forEach(function (div) {
       div.classList.remove('show-grid');
     });
+    // toggle
     isGridShown = false;
     gridButton.textContent = 'Show Grid';
   } else {
     squares.forEach(function (div) {
       div.classList.add('show-grid');
     });
+    // toggle
     isGridShown = true;
     gridButton.textContent = 'Hide Grid';
   }
