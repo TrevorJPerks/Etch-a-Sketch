@@ -89,18 +89,10 @@ function changeColor(triggeredDiv) {
   triggeredDiv.style.backgroundColor = userColorSelection;
 }
 
-const eraseButton = document.querySelector('.erase-button');
+// SHOW / HIDE GRID LINES
+document.querySelector('.grid-button').addEventListener('click', toggleGrid);
 
-eraseButton.onclick = () => {
-  const squares = document.querySelectorAll('.pixel');
-  squares.forEach(function (div) {
-    div.style.backgroundColor = 'white';
-  });
-};
-
-const gridButton = document.querySelector('.grid-button');
-
-gridButton.onclick = () => {
+function toggleGrid() {
   const squares = document.querySelectorAll('.pixel');
   if (isGridShown) {
     squares.forEach(function (div) {
@@ -115,7 +107,17 @@ gridButton.onclick = () => {
     isGridShown = true;
     gridButton.textContent = 'Hide Grid';
   }
-};
+}
+
+// CLEAR DRAWING AREA
+document.querySelector('.clearAll-button').addEventListener('click', clearAll);
+
+function clearAll() {
+  const squares = document.querySelectorAll('.pixel');
+  squares.forEach(function (div) {
+    div.style.backgroundColor = 'hsl(0, 0%, 100%)'; // White
+  });
+}
 
 // Initial Setup
 window.onload = () => {
