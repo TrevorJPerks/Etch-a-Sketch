@@ -62,7 +62,7 @@ function changeColor() {
       Math.random() * 360
     )}, 100%, 50%)`;
   } else {
-    this.style.backgroundColor = `${userColorSelection}`;
+    this.style.backgroundColor = userColorSelection;
   }
 }
 
