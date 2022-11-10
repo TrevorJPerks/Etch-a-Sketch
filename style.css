@@ -103,18 +103,8 @@ button:hover {
   outline-offset: 3px;
 }
 
-#custom-color {
-  border: 0;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  background-color: transparent;
-}
-
-#custom-color::-webkit-color-swatch {
-  outline: 2px solid rgb(194, 194, 194);
-  outline-offset: 3px;
-  border: none;
+.color-picker input[type='radio']#black {
+  --radio-color: rgb(0, 0, 0);
 }
 
 .color-picker input[type='radio']#eraser {
