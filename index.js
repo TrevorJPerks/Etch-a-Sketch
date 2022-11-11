@@ -25,9 +25,7 @@ function createGrid(sliderValue) {
   const numberOfDivs = sliderValue ** 2;
   const divSize = 600 / sliderValue;
   // Remove all nodes before adding more.
-  while (drawingArea.firstChild) {
-    drawingArea.removeChild(drawingArea.firstChild);
-  }
+  drawingArea.replaceChildren();
 
   for (i = 0; i < numberOfDivs; i++) {
     const pixel = document.createElement('div');
