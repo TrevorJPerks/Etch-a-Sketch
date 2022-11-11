@@ -56,6 +56,10 @@ h1 {
   text-align: center;
 }
 
+.slider {
+  width: 120px;
+}
+
 button {
   border: none;
   outline: 2px solid hsl(0, 0%, 70%);
