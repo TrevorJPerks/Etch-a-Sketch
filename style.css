@@ -101,6 +101,7 @@ button:hover {
   height: 1.5rem;
   outline: 3px solid var(--radio-color, currentColor);
   outline-offset: 3px;
+  border-radius: 50%;
 }
 
 .color-picker input[type='radio']#black {
@@ -115,10 +116,6 @@ button:hover {
   --radio-color: hsl(290, 52%, 34%);
 }
 
-.color-picker input[type='radio']:checked {
-  background-color: var(--radio-color);
-}
-
 .color-picker input[type='radio']#rainbow:checked {
   background: linear-gradient(
     hsl(0, 97%, 45%),
@@ -128,6 +125,10 @@ button:hover {
     hsl(224, 60%, 35%),
     hsl(290, 52%, 34%)
   );
+}
+
+.color-picker input[type='radio']:checked {
+  background-color: var(--radio-color);
 }
 
 .show-grid {
