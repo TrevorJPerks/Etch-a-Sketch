@@ -1,4 +1,5 @@
 ![Preview Image](https://i.imgur.com/jPUpi37.png)
+
 Live Demo: https://trevorjperks.github.io/Etch-a-Sketch/
 
 An interactable Etch-a-Sketch created using HTML, CSS, and Vanilla Javascript.
