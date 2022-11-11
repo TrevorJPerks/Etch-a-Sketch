@@ -57,10 +57,13 @@ h1 {
 }
 
 button {
-  border: white;
+  border: none;
+  outline: 2px solid hsl(0, 0%, 70%);
+  outline-offset: 3px;
   border-radius: 50px;
-  color: white;
-  padding: 8px 20px;
+  color: hsl(0, 0%, 100%);
+  width: 100px;
+  height: 30px;
   font-size: 16px;
 }
 
@@ -75,7 +78,7 @@ button:hover {
 }
 
 .grid-button:hover {
-  background-color: hsl(271, 100%, 42%);
+  background-color: hsl(271, 100%, 45%);
 }
 
 .clearAll-button {
