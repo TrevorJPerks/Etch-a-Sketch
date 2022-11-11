@@ -68,10 +68,12 @@ button {
 }
 
 button:hover {
-  scale: 0.99;
   box-shadow: 14px 15px 15px -13px hsla(0, 0%, 0%, 0.41);
   -webkit-box-shadow: 14px 15px 15px -13px hsla(0, 0%, 0%, 0.41);
   -moz-box-shadow: 14px 15px 15px -13px hsla(0, 0%, 0%, 0.41);
+}
+button:active {
+  transform: scale(0.95);
 }
 .grid-button {
   background-color: hsl(271, 100%, 50%);
