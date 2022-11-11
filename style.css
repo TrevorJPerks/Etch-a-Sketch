@@ -34,7 +34,7 @@ h1 {
   width: 600px;
   height: 600px;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: hsl(0, 0%, 100%);
   overflow: hidden;
 }
 
@@ -49,7 +49,7 @@ h1 {
   border: 1px solid hsl(0, 0%, 44%);
   border-right: 0;
   border-radius: 10px 0px 0px 10px;
-  box-shadow: -7px 7px 39px 0px rgba(0, 0, 0, 0.62);
+  box-shadow: -7px 7px 39px 0px hsla(0, 0%, 0%, 0.62);
 }
 
 .slider-container {
@@ -66,9 +66,9 @@ button {
 
 button:hover {
   scale: 0.99;
-  box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
-  -webkit-box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
-  -moz-box-shadow: 14px 15px 15px -13px rgba(0, 0, 0, 0.41);
+  box-shadow: 14px 15px 15px -13px hsla(0, 0%, 0%, 0.41);
+  -webkit-box-shadow: 14px 15px 15px -13px hsla(0, 0%, 0%, 0.41);
+  -moz-box-shadow: 14px 15px 15px -13px hsla(0, 0%, 0%, 0.41);
 }
 .grid-button {
   background-color: hsl(271, 100%, 50%);
@@ -104,15 +104,15 @@ button:hover {
 }
 
 .color-picker input[type='radio']#black {
-  --radio-color: rgb(0, 0, 0);
+  --radio-color: hsl(0, 0%, 0%);
 }
 
 .color-picker input[type='radio']#eraser {
-  --radio-color: rgb(255, 197, 197);
+  --radio-color: hsl(0, 100%, 89%);
 }
 
 .color-picker input[type='radio']#rainbow {
-  --radio-color: #732982;
+  --radio-color: hsl(290, 52%, 34%);
 }
 
 .color-picker input[type='radio']:checked {
@@ -121,15 +121,15 @@ button:hover {
 
 .color-picker input[type='radio']#rainbow:checked {
   background: linear-gradient(
-    #e40303,
-    #ff8c00,
-    #ffed00,
-    #008026,
-    #24408e,
-    #732982
+    hsl(0, 97%, 45%),
+    hsl(33, 100%, 50%),
+    hsl(56, 100%, 50%),
+    hsl(138, 100%, 25%),
+    hsl(224, 60%, 35%),
+    hsl(290, 52%, 34%)
   );
 }
 
 .show-grid {
-  border: 1px solid rgba(128, 128, 128, 50%);
+  border: 1px solid hsla(0, 0%, 50%, 0.5);
 }
